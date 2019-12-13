@@ -1,0 +1,49 @@
+{
+	"name": "@titanium/authentication",
+	"version": "0.0.1",
+	"description": "Titanium native mobile authentication manager",
+	"keywords": [
+		"oauth",
+		"auth",
+		"authentication",
+		"titanium",
+		"mobile",
+		"axway",
+		"turbo",
+		"ios",
+		"android",
+		"native",
+		"appcelerator",
+		"brenton-house"
+	],
+	"author": {
+		"name": "Brenton House",
+		"email": "brenton.house@gmail.com",
+		"url": "https://brenton.house"
+	},
+	"maintainers": [
+		{
+			"name": "Brenton House",
+			"email": "brenton.house@gmail.com",
+			"url": "https://brenton.house"
+		}
+	],
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "github:brentonhouse/titanium-authentication"
+	},
+	"devDependencies": {
+		"@titanium/eslint-config": "0.0.11",
+		"eslint": "^6.7.2"
+	},
+	"peerDependencies": {
+		"lodash": "^4.17.15"
+	},
+	"main": "./Authentication.js",
+	"scripts": {
+		"test": "npm install --ignore-scripts && npm run list-files",
+		"list-files": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
+		"prepublishOnly": "git pull && bump"
+	}
+}
