@@ -1,7 +1,6 @@
 
 const _ = require('lodash');
 
-
 let serviceParams = _.get(Alloy, 'CFG.services.authentication');
 if (_.isNil(serviceParams)) {
 	serviceParams = Ti.App.Properties.getString('authentication-service');
@@ -15,9 +14,8 @@ const authenticationService = new (require(serviceParams.module))(_.omit(service
 class Authentication {
 
 	static async authenticate({ username, password, domain }) {
-		console.debug('🦖  you are here → Authentication.authenticate');
+		console.debug('🔒  you are here → Authentication.authenticate');
 		const authenticationResponse = await authenticationService.authenticate({ username, password, domain });
-		// console.error(`authenticationResponse: ${JSON.stringify(authenticationResponse, null, 2)}`);
 		return authenticationResponse;
 	}
 
