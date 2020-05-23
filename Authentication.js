@@ -4,14 +4,14 @@ let authenticationService;
 
 class Authentication {
 
-	static initialize({ provider, params }) {
+	static initialize({ provider, options }) {
 
 		if (_.isNil(authenticationService)) {
 
 			if (_.isNil(provider)) {
 				throw new Error('Must provide a valid Authentication service provider');
 			}
-			authenticationService = new (require(provider))(params);
+			authenticationService = new (require(provider))(options);
 
 		} else {
 			throw new Error('Authentication service already initialized');
