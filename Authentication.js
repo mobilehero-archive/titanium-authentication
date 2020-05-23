@@ -1,21 +1,30 @@
 
 const _ = require('lodash');
-
-let serviceParams = _.get(Alloy, 'CFG.services.authentication');
-if (_.isNil(serviceParams)) {
-	serviceParams = Ti.App.Properties.getString('authentication-service');
-	if (_.isNil(serviceParams)) {
-		throw new Error('No Authentication Service defined.');
-	}
-}
-_.isString(serviceParams) && (serviceParams = { module: serviceParams });
-const authenticationService = new (require(serviceParams.module))(_.omit(serviceParams, 'module'));
+let authenticationService;
 
 class Authentication {
 
-	static async authenticate({ username, password, domain }) {
+	static initialize({ provider, params }) {
+
+		if (_.isNil(authenticationService)) {
+
+			if (_.isNil(provider)) {
+				throw new Error('Must provide a valid Authentication service provider');
+			}
+			authenticationService = new (require(provider))(params);
+
+		} else {
+			throw new Error('Authentication service already initialized');
+		}
+
+	}
+
+	static async authenticate({ username, password, options = {} }) {
 		console.debug('🔒  you are here → Authentication.authenticate');
-		const authenticationResponse = await authenticationService.authenticate({ username, password, domain });
+		if (_.isNil(authenticationService)) {
+			throw new Error('Authentication service has not been initialized');
+		}
+		const authenticationResponse = await authenticationService.authenticate({ username, password, options });
 		return authenticationResponse;
 	}
 

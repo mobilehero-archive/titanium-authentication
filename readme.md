@@ -1,11 +1,3 @@
-<a href="#titaniumauthentication">
-	<p align="center">
-		<img src="https://cdn.secure-api.org/images/warning-sign-area51.png" width="80%" />
-		<img src="https://cdn.secure-api.org/images/border-line-3.png" width="70%" height="50" />
-	</p>
-</a>
-
-
 # @titanium/authentication
 
 [![@titanium/authentication](https://img.shields.io/npm/v/@titanium/authentication.png)](https://www.npmjs.com/package/@titanium/authentication)
@@ -51,7 +43,8 @@ Create a ```Authentication``` object into your JavaScript code.
 
 ```javascript
 	const Authentication = require('@titanium/authentication');
-	const authentication = new Authentication();
+	Authentication.initialize('my-auth-provider-plugin'. { option1: 'this is an option' });
+	await Authentication.authenticate({ username: 'user', password: 'password', { domain: 'my-domain' }});
 ```
 
 
