@@ -11,7 +11,11 @@ class Authentication {
 			if (_.isNil(provider)) {
 				throw new Error('Must provide a valid Authentication service provider');
 			}
-			authenticationService = new (require(provider))(options);
+			if (_.isString(provider)) {
+				authenticationService = new (require(provider))(options);
+			} else {
+				authenticationService = provider;
+			}
 
 		} else {
 			throw new Error('Authentication service already initialized');
