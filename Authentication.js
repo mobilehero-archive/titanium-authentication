@@ -32,12 +32,12 @@ class Authentication {
 		return authenticationResponse;
 	}
 
-	static async getKey({ kid } = {}) {
-		console.debug('🔒  you are here → Authentication.getKey');
+	static async getPublicKey({ kid } = {}) {
+		console.debug('🔒  you are here → Authentication.getPublicKey');
 
 		let public_key;
-		if (_.isFunction(authenticationService.getKey)) {
-			public_key = await authenticationService.getKey({ kid });
+		if (_.isFunction(authenticationService.getPublicKey)) {
+			public_key = await authenticationService.getPublicKey({ kid });
 		}
 
 		return public_key;
