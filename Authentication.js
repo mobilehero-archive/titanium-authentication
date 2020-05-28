@@ -33,7 +33,7 @@ class Authentication {
 	}
 
 	static async getPublicKey({ kid } = {}) {
-		console.debug('🔒  you are here → Authentication.getPublicKey');
+		console.debug(`🔒  you are here → Authentication.getPublicKey({kid:${kid}})`);
 
 		let public_key;
 		if (_.isFunction(authenticationService.getPublicKey)) {
