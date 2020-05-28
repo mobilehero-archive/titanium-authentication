@@ -35,6 +35,10 @@ class Authentication {
 	static async getPublicKey({ kid } = {}) {
 		console.debug(`🔒  you are here → Authentication.getPublicKey({kid:${kid}})`);
 
+		if (_.isNil(authenticationService)) {
+			throw new Error('Authentication service has not been initialized');
+		}
+
 		let public_key;
 		if (_.isFunction(authenticationService.getPublicKey)) {
 			public_key = await authenticationService.getPublicKey({ kid });
