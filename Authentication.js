@@ -1,55 +1,54 @@
 
 const _ = require('lodash');
-let authenticationService;
+const PROVIDER = Symbol('provider');
 
 class Authentication {
 
-	static initialize({ provider, options }) {
-
-		if (_.isNil(authenticationService)) {
+	constructor({ provider, options = {}} = {}) {
 
 			if (_.isNil(provider)) {
 				throw new Error('Must provide a valid Authentication service provider');
 			}
 			if (_.isString(provider)) {
-				authenticationService = new (require(provider))(options);
+				this[PROVIDER] = new (require(provider))(options);
 			} else {
-				authenticationService = provider;
+				this[PROVIDER] = provider;
 			}
-
-		} else {
-			throw new Error('Authentication service already initialized');
-		}
-
 	}
 
-	static async authenticate({ username, password, options = {} } = {}) {
+	
+	async authenticate(...args) {
 		turbo.trace('🔒  you are here → Authentication.authenticate');
-		if (_.isNil(authenticationService)) {
-			throw new Error('Authentication service has not been initialized');
-		}
-		const authenticationResponse = await authenticationService.authenticate({ username, password, options });
-		return authenticationResponse;
+		return await this[PROVIDER].authenticate(...args);
 	}
 
-	static async isAuthenticated() {
+	async isAuthenticated(...args) {
 		turbo.trace('🔒  you are here → Authentication.isAuthenticated');
-		if (_.isNil(authenticationService)) {
-			throw new Error('Authentication service has not been initialized');
-		}
-		return await authenticationService.isAuthenticated();
+		return await this[PROVIDER].isAuthenticated(...args);
 	}
 
-	static async getPublicKey({ kid } = {}) {
-		turbo.trace(`🔒  you are here → Authentication.getPublicKey({kid:${kid}})`);
+	// async getToken(...args) {
+	// 	turbo.trace('🔒  you are here → Authentication.getToken()');
+	// 	return await this[provider].getToken(...args);
+	// }
 
-		if (_.isNil(authenticationService)) {
-			throw new Error('Authentication service has not been initialized');
-		}
+	async logout(...args) {
+		turbo.trace('🔒  you are here → Authentication.logout()');
+		debugger;
+		return await this[PROVIDER].logout(...args);
+	}
+
+	async renew(...args) {
+		turbo.trace('🔒  you are here → Authentication.renew()');
+		return await this[PROVIDER].renew(...args);
+	}
+
+	static async getPublicKey(...args) {
+		turbo.trace(`🔒  you are here → Authentication.getPublicKey()`);
 
 		let public_key;
-		if (_.isFunction(authenticationService.getPublicKey)) {
-			public_key = await authenticationService.getPublicKey({ kid });
+		if (_.isFunction(this[PROVIDER].getPublicKey)) {
+			public_key = await this[PROVIDER].getPublicKey(...args);
 		}
 
 		return public_key;
