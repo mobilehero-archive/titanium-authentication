@@ -24,7 +24,7 @@ class Authentication {
 	}
 
 	static async authenticate({ username, password, options = {} } = {}) {
-		turbo.trace('🔒  you are here → Authentication.authenticate');
+		turbo.track('🔒  you are here → Authentication.authenticate');
 		if (_.isNil(authenticationService)) {
 			throw new Error('Authentication service has not been initialized');
 		}
@@ -33,7 +33,7 @@ class Authentication {
 	}
 
 	static async isAuthenticated() {
-		turbo.trace('🔒  you are here → Authentication.isAuthenticated');
+		turbo.track('🔒  you are here → Authentication.isAuthenticated');
 		if (_.isNil(authenticationService)) {
 			throw new Error('Authentication service has not been initialized');
 		}
@@ -41,7 +41,7 @@ class Authentication {
 	}
 
 	static async getPublicKey({ kid } = {}) {
-		turbo.trace(`🔒  you are here → Authentication.getPublicKey({kid:${kid}})`);
+		turbo.track(`🔒  you are here → Authentication.getPublicKey({kid:${kid}})`);
 
 		if (_.isNil(authenticationService)) {
 			throw new Error('Authentication service has not been initialized');

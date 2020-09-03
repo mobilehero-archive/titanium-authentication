@@ -1,6 +1,7 @@
 
 const _ = require('lodash');
 const PROVIDER = Symbol('provider');
+const logger = require('@geek/logger');
 
 class Authentication {
 
@@ -18,33 +19,32 @@ class Authentication {
 
 	
 	async authenticate(...args) {
-		turbo.trace('🔒  you are here → Authentication.authenticate');
+		turbo.track('🔒  you are here → Authentication.authenticate');
 		return await this[PROVIDER].authenticate(...args);
 	}
 
 	async isAuthenticated(...args) {
-		turbo.trace('🔒  you are here → Authentication.isAuthenticated');
+		turbo.track('🔒  you are here → Authentication.isAuthenticated');
 		return await this[PROVIDER].isAuthenticated(...args);
 	}
 
 	// async getToken(...args) {
-	// 	turbo.trace('🔒  you are here → Authentication.getToken()');
+	// 	turbo.track('🔒  you are here → Authentication.getToken()');
 	// 	return await this[provider].getToken(...args);
 	// }
 
 	async logout(...args) {
-		turbo.trace('🔒  you are here → Authentication.logout()');
-		debugger;
+		turbo.track('🔒  you are here → Authentication.logout()');
 		return await this[PROVIDER].logout(...args);
 	}
 
 	async renew(...args) {
-		turbo.trace('🔒  you are here → Authentication.renew()');
+		turbo.track('🔒  you are here → Authentication.renew()');
 		return await this[PROVIDER].renew(...args);
 	}
 
 	static async getPublicKey(...args) {
-		turbo.trace(`🔒  you are here → Authentication.getPublicKey()`);
+		turbo.track(`🔒  you are here → Authentication.getPublicKey()`);
 
 		let public_key;
 		if (_.isFunction(this[PROVIDER].getPublicKey)) {
