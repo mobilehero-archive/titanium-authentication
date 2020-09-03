@@ -19,32 +19,32 @@ class Authentication {
 
 	
 	async authenticate(...args) {
-		turbo.track('🔒  you are here → Authentication.authenticate');
+		logger.track('🔒  you are here → Authentication.authenticate');
 		return await this[PROVIDER].authenticate(...args);
 	}
 
 	async isAuthenticated(...args) {
-		turbo.track('🔒  you are here → Authentication.isAuthenticated');
+		logger.track('🔒  you are here → Authentication.isAuthenticated');
 		return await this[PROVIDER].isAuthenticated(...args);
 	}
 
 	// async getToken(...args) {
-	// 	turbo.track('🔒  you are here → Authentication.getToken()');
+	// 	logger.track('🔒  you are here → Authentication.getToken()');
 	// 	return await this[provider].getToken(...args);
 	// }
 
 	async logout(...args) {
-		turbo.track('🔒  you are here → Authentication.logout()');
+		logger.track('🔒  you are here → Authentication.logout()');
 		return await this[PROVIDER].logout(...args);
 	}
 
 	async renew(...args) {
-		turbo.track('🔒  you are here → Authentication.renew()');
+		logger.track('🔒  you are here → Authentication.renew()');
 		return await this[PROVIDER].renew(...args);
 	}
 
 	static async getPublicKey(...args) {
-		turbo.track(`🔒  you are here → Authentication.getPublicKey()`);
+		logger.track(`🔒  you are here → Authentication.getPublicKey()`);
 
 		let public_key;
 		if (_.isFunction(this[PROVIDER].getPublicKey)) {
