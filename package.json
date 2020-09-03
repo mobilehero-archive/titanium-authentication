@@ -37,7 +37,7 @@
 		"url": "github:brentonhouse/titanium-authentication"
 	},
 	"devDependencies": {
-		"@titanium/eslint-config": "0.0.15",
+		"@titanium/eslint-config": "0.0.17",
 		"eslint": "^7.8.1"
 	},
 	"peerDependencies": {
