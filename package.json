@@ -1,6 +1,6 @@
 {
 	"name": "@titanium/authentication",
-	"version": "0.0.16",
+	"version": "0.0.17",
 	"description": "Titanium native mobile authentication manager",
 	"keywords": [
 		"oauth",
@@ -41,7 +41,8 @@
 		"eslint": "^7.9.0"
 	},
 	"peerDependencies": {
-		"lodash": "^4.17.20"
+		"lodash": "^4.17.20",
+		"@geek/logger": "^0.0.1"
 	},
 	"main": "./Authentication.js",
 	"scripts": {

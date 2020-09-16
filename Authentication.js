@@ -1,7 +1,7 @@
 
 const _ = require('lodash');
 const PROVIDER = Symbol('provider');
-const logger = require('@geek/logger');
+const logger = require('@geek/logger').createLogger('@titanium/authentication', { meta: { filename: __filename } });
 
 class Authentication {
 
