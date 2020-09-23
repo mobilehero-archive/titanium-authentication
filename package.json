@@ -1,6 +1,6 @@
 {
 	"name": "@titanium/authentication",
-	"version": "0.0.17",
+	"version": "0.0.18",
 	"description": "Titanium native mobile authentication manager",
 	"keywords": [
 		"oauth",

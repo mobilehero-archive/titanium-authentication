@@ -17,6 +17,10 @@ class Authentication {
 			}
 	}
 
+	get token(){
+		return this[PROVIDER].token;
+	}
+
 	
 	async authenticate(...args) {
 		logger.track('🔒  you are here → Authentication.authenticate');
@@ -28,10 +32,10 @@ class Authentication {
 		return await this[PROVIDER].isAuthenticated(...args);
 	}
 
-	// async getToken(...args) {
-	// 	logger.track('🔒  you are here → Authentication.getToken()');
-	// 	return await this[provider].getToken(...args);
-	// }
+	async getAuthToken(...args) {
+		logger.track('🔒  you are here → Authentication.getAuthToken()');
+		return await this[provider].getAuthToken(...args);
+	}
 
 	async logout(...args) {
 		logger.track('🔒  you are here → Authentication.logout()');
