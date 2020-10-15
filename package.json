@@ -1,6 +1,6 @@
 {
 	"name": "@titanium/authentication",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Titanium native mobile authentication manager",
 	"keywords": [
 		"oauth",
@@ -38,16 +38,20 @@
 	},
 	"devDependencies": {
 		"@titanium/eslint-config": "0.0.18",
-		"eslint": "^7.11.0"
+		"eslint": "^7.11.0",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-jsdoc": "^30.6.5",
+		"eslint-plugin-promise": "^4.2.1"
 	},
 	"peerDependencies": {
 		"lodash": "^4.17.20",
-		"@geek/logger": "^1.0.0"
+		"@geek/logger": "^1.0.8"
 	},
 	"main": "./Authentication.js",
 	"scripts": {
-		"test": "npm install --ignore-scripts && npm run list",
+		"prep": "npm install --ignore-scripts && npm run list",
 		"list": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
-		"prepublishOnly": "git pull && bump"
+		"prepublishOnly": "git pull && bump release",
+		"test": "npm run prep"
 	}
 }
