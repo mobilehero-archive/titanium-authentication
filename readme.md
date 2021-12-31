@@ -47,11 +47,11 @@
 * [©️  &nbsp; Legal](#️---legal)
 	* [The MIT License (MIT)](#the-mit-license-mit)
 
-> Titanium native mobile authentication manager
+> Axway Amplify authentication module for mobile titanium
 
 ## 📓   &nbsp; Description
 
-For use with authenticating with Titanium Native Mobile apps
+For use with authenticating with Axway Amplify for Mobile Titanium
 
 ## ✨  &nbsp; Features
 
