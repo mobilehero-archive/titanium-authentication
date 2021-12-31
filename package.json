@@ -1,6 +1,6 @@
 {
 	"name": "@titanium/authentication",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "Titanium native mobile authentication manager",
 	"keywords": [
 		"oauth",
@@ -51,7 +51,7 @@
 	"scripts": {
 		"prep": "npm install --ignore-scripts && npm run list",
 		"list": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
-		"prepublishOnly": "git pull && bump release",
+		"prepublishOnly2": "git pull && bump release",
 		"test": "npm run prep"
 	}
 }
