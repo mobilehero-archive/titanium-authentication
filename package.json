@@ -1,6 +1,6 @@
 {
 	"name": "@titanium/authentication",
-	"version": "1.0.12",
+	"version": "1.0.13",
 	"description": "Titanium native mobile authentication manager",
 	"keywords": [
 		"oauth",
@@ -9,6 +9,7 @@
 		"authentication",
 		"titanium",
 		"mobile",
+		"amplify",
 		"axway",
 		"turbo",
 		"ios",
@@ -17,6 +18,9 @@
 		"appcelerator",
 		"axwaydev",
 		"token",
+		"plugin",
+		"axway-amplify",
+		"api-builder",
 		"brenton-house"
 	],
 	"author": {
