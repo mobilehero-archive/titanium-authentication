@@ -1,7 +1,8 @@
 {
 	"name": "@titanium/authentication",
-	"version": "1.0.15",
-	"description": "Titanium native mobile authentication manager",
+	"version": "1.0.16",
+	"description": "Axway Amplify authentication module for Appcelerator Titanium Mobile",
+	"homepage": "https://brenton.house/saying-goodbye-to-axway-amplify-titanium-31a44f3671de",
 	"keywords": [
 		"oauth",
 		"oauth2",
@@ -18,9 +19,16 @@
 		"appcelerator",
 		"axwaydev",
 		"token",
+		"sdk",
 		"plugin",
-		"axway-amplify",
+		"amplify",
 		"api-builder",
+		"appcelerator-titanium",
+		"titanium-sdk",
+		"titanium-mobile",
+		"titanium-module",
+		"axway-sdk",
+		"axway-amplify",
 		"brenton-house"
 	],
 	"author": {
@@ -55,7 +63,7 @@
 	"scripts": {
 		"prep": "npm install --ignore-scripts && npm run list",
 		"list": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
-		"prepublishOnly2": "git pull && bump release",
+		"prepublishOnly": "git pull && bump insane",
 		"test": "npm run prep"
 	}
 }
