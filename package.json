@@ -1,6 +1,6 @@
 {
 	"name": "@titanium/authentication",
-	"version": "1.0.33",
+	"version": "1.0.34",
 	"description": "⭐  Axway Amplify authentication module for Appcelerator Titanium SDK",
 	"homepage": "https://brenton.house/saying-goodbye-to-axway-amplify-titanium-31a44f3671de",
 	"keywords": [
@@ -49,7 +49,7 @@
 		"url": "github:brentonhouse/titanium-authentication"
 	},
 	"devDependencies": {
-		"@titanium/eslint-config": "1.0.25",
+		"@titanium/eslint-config": "1.0.26",
 		"eslint": "^8.6.0",
 		"eslint-plugin-import": "^2.25.4",
 		"eslint-plugin-jsdoc": "^37.6.1",
@@ -69,18 +69,18 @@
 		"prepublishOnly2": "git pull && npm test && npm audit fix && bump insane"
 	},
 	"dependencies": {
-		"@titanium/bluebird": "^3.7.26",
+		"@titanium/bluebird": "^3.7.27",
 		"@titanium/errors": "^1.0.21",
 		"@titanium/essentials": "^1.0.55",
 		"@titanium/events": "^1.0.33",
 		"@titanium/eventsource": "^1.0.23",
-		"@titanium/jwt": "^1.0.25",
-		"@titanium/module-copier": "^1.0.28",
+		"@titanium/jwt": "^1.0.26",
+		"@titanium/module-copier": "^1.0.29",
 		"@titanium/please": "^1.0.32",
-		"@titanium/polyfill": "^1.0.29",
-		"@titanium/querystring": "^1.0.20",
-		"@titanium/tiapp-xml": "^1.0.31",
-		"@titanium/titanium": "^5.4.25",
+		"@titanium/polyfill": "^1.0.30",
+		"@titanium/querystring": "^1.0.22",
+		"@titanium/tiapp-xml": "^1.0.32",
+		"@titanium/titanium": "^5.4.27",
 		"@titanium/turbo": "^2.2.47"
 	}
 }
